@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Divorce Papers</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            padding: 40px;
+        }
+        #divorceImage {
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .signature-section {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            font-size: 18px;
+            width: 60%;
+            max-width: 400px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 18px;
+            background-color: #b30000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .confirmation {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="divorceImage" src="divorce.png" alt="Divorce Papers">
+
+    <div class="signature-section">
+        <input type="text" id="signature" placeholder="Sign your name here">
+        <br>
+        <button id="sendBtn">Send</button>
+        <div id="confirmation" class="confirmation">Your signature has been submitted.</div>
+    </div>
+
+    <script>
+        document.getElementById('sendBtn').addEventListener('click', function() {
+            const name = document.getElementById('signature').value.trim();
+            if (!name) {
+                alert("Please enter your name.");
+                return;
+            }
+
+            // Placeholder for sending name to a server or GitHub
+            console.log("Signed by:", name);
+
+            document.getElementById('confirmation').style.display = 'block';
+            document.getElementById('signature').disabled = true;
+            this.disabled = true;
+        });
+    </script>
+
+</body>
+</html>
