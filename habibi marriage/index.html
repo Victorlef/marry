@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Θέλεις να με παντρευτείς;</title>
+    <style>
+        body {
+            background-color: #ffd6e0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .proposal {
+            font-size: 48px;
+            color: #ff4d6d;
+            margin-bottom: 30px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+        }
+        #backBtn {
+            background-color: #555;
+            color: white;
+            display: none;
+        }
+        #proposalImage {
+            max-width: 400px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="proposalText" class="proposal">will u marry me?</div>
+    <img id="proposalImage" src="habibi.jpg" alt="Proposal Image">
+    <div class="buttons">
+        <button id="yesBtn">yessss</button>
+        <button id="noBtn">noooo</button>
+        <button id="backBtn">Πίσω</button>
+    </div>
+
+    <script>
+        document.getElementById('yesBtn').addEventListener('click', function() {
+            document.getElementById('proposalText').innerText = 'yesssss';
+            document.getElementById('yesBtn').style.display = 'none';
+            document.getElementById('noBtn').style.display = 'none';
+            document.getElementById('backBtn').style.display = 'inline-block';
+        });
+
+        document.getElementById('noBtn').addEventListener('click', function() {
+            this.style.position = 'absolute';
+            this.style.left = Math.random() * (window.innerWidth - this.offsetWidth) + 'px';
+            this.style.top = Math.random() * (window.innerHeight - this.offsetHeight) + 'px';
+        });
+
+        document.getElementById('backBtn').addEventListener('click', function() {
+            location.reload();
+        });
+    </script>
+</body>
+</html>
